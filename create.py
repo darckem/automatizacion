@@ -1,11 +1,13 @@
 import sys
 import os
 from github import Github
+from dotenv import load_dotenv
 
-path = "/ruta/del/proyecto/" #ruta para guardar los proyectos
+load_dotenv()
 
-username = "" #usuario de GitHub
-password = "" #Contraseña de GitHub
+path = os.getenv("FILEPATH")
+username = os.getenv("USERNAME")
+password = os.getenv("PASSWORD")
 
 def create():
     os.makedirs(path + str(sys.argv[1]))
